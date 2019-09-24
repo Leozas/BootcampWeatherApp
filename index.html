@@ -9,13 +9,14 @@
   <title>Your Local Weather</title>
   <meta name="description" content="Awesome Inc. Fall 2019 Weather App Javascript Project">
   <meta name="author" content="Michael A. Loyselle">
-  
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Themestr Theme Css -->
   <link rel="stylesheet" href="web/css/themestr.css">
@@ -23,6 +24,41 @@
 </head>
 
 <body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!--- columns to make row into 3rds to center form input and button -->
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+      <!-- column to hold everything? -->
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="formandbutton">
+          <!-- input form for zip code -->
+          <div class="form-group">
+            <input type="" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code">
+            <small id="" class="form-text text-muted">Enter a US Zip Code then click "Get Weather".</small>
+          </div>
+        </div>
+        <div class="getweatherbutton">
+          <button type="button" class="btn btn-primary">Get Weather</button>
+        </div>
+      </div>
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+  </div>
+
+
+  <!-- need:  
+    1 title: "Weather App"          
+    1 form: input Zip Codes
+    1 button: "Get Weather"
+        clicking with recognized zip code loads
+          ->city name
+          -> temperatures: K,F,C
+          ->Condition: Rainy/Cloudy/etc
+          ->Season Display: Spring/Summer/Fall/Winter
+        clicking with unrecognized zip code loads 
+          -> error message
+       -->
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
