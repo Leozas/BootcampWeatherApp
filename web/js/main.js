@@ -38,8 +38,8 @@ async function currentForecast() {
         zip = document.querySelector('.form-control').value;
 
         //get json/api
-        console.log('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
-        const response = await fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
+        console.log('https://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
         const currentWeather = await response.json();
 
         // city
