@@ -3,8 +3,6 @@
 
 <head>
 
-  <title>Title</title>
-
   <!-- Meta Infos -->
   <title>Your Local Weather</title>
   <meta name="description" content="Awesome Inc. Fall 2019 Weather App Javascript Project">
@@ -24,7 +22,7 @@
 </head>
 
 <body>
-  <h1 class=>Weather App</h1>
+  <h1 class="text-center my-5 text-primary">Weather App</h1>
   <div class="container-fluid">
     <div class="row">
       <!--- columns to make row into 3rds to center form input and button -->
@@ -35,14 +33,11 @@
           <div class="formandbutton">
             <!-- input form for zip code -->
             <div class="form-group">
-              <input type="" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code">
+              <input type="TEL" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code"
+                maxlength="5" autofocus>
               <small id="" class="form-text text-muted">Enter a US Zip Code then click "Get Weather".</small>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="getweatherbutton">
-            <button type="button" class="btn btn-primary">Get Weather</button>
+            <button id="weatherBtn" type="button" class="btn btn-primary">Get Weather</button>
           </div>
         </div>
       </div>
