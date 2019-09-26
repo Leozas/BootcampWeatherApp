@@ -1,14 +1,22 @@
 //structure = var, then defined func, then overall func
 
+// api
+var api = 'a73f5d270b60b0d16939922df15195f3';
+
+// zip var
+var zip = document.querySelector('.form-control').value;
+
 // Get Weather Button
 var weatherBtn = document.querySelector('#weatherBtn');
 
 // set button event onclick
-weatherBtn.addEventListener('click', forecast);
+weatherBtn.addEventListener('click', currentForecast);
 
 // initialize all id vars
+// error msg
+var error = document.querySelector('#error');
 // table itself
-var toggletable = document.querySelector('.toggletable');
+var toggletable = document.querySelector('#toggletable');
 
 // table inputs
 var city = document.querySelector('#city');
@@ -18,48 +26,48 @@ var tempC = document.querySelector('#tempC');
 var condition = document.querySelector('#condition');
 var season = document.querySelector('#season');
 
+toggletable.style.display = 'none';
 
-// Error message
-let errorMsg = document.querySelector('#errorMsg');
-
-btn.addEventListener('click', getWeather);
-
-async function forecast() {
+async function currentForecast() {
+   // console.log()
     try {
-        // Hides error message
-        errorMsg.style.display = 'none';
+        // hide error message for repeat tries
+        error.style.display = 'none';
 
-        let zip = document.querySelector('.form-control').value;
-        // alert(`The zip-code is ${zip}`); --> Testing the value of zip
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=15d6e8a17e124db561676b9b0b009aac`);
+        // reload zip for each attempt
+        zip = document.querySelector('.form-control').value;
+
+        //get json/api
+        console.log('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
+        const response = await fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&id=524901&APPID=' + api)
         const currentWeather = await response.json();
 
-        // City
+        // city
         city.innerHTML = currentWeather.name;
 
-        // Temp
+        // temperatures
         tempK.innerHTML = `${currentWeather.main.temp} K`;
-        // K to F Formula = (0K − 273.15) × 9/5 + 32 = -459.7°F
-        tempF.innerHTML = `${((Number(currentWeather.main.temp) - 273.15) * (9 / 5) + 32).toFixed(2)} °F`;
-        // K to C Formula = 0K − 273.15 = -273.1°C
-        tempC.innerHTML = `${(Number(currentWeather.main.temp) - 273.15).toFixed(2)} °C`;
+        tempF.innerHTML = `${((Number(currentWeather.main.temp) - 273.15) * (9 / 5) + 32).toFixed(2)}° F`;
+        tempC.innerHTML = `${(Number(currentWeather.main.temp) - 273.15).toFixed(2)}° C`;
 
-        // Conditions
-        status.innerHTML = currentWeather.weather[0].description;
+        // condition
+        condition.innerHTML = currentWeather.weather[0].description;
 
-        // Temp Icon 
-        tempIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
+        // season 
+        season.innerHTML = `<img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
 
-        // Make elements visible
-        document.getElementById('hideTable').style.display = 'block';
+        // display table
+        toggletable.style.display = 'block';
+
 
     } catch (e) {
-        // Makes error message visible, and hides table
-        errorMsg.style.display = 'block';
-        document.getElementById('hideTable').style.display = 'none';
-        errorMsg.innerHTML = `Please input a valid 5-digit US Zip Code --> Ex. 90210<br><small>[Error: "${e}"]</small>`;
+        // display error msg, hide table
+        console.log(toggletable)
+        error.style.display = 'block';
+        error.innerHTML = `Please input a valid 5-digit US Zip Code. Ex. 90210<br><small>[Error: "${e}"]</small>`;
+        toggletable.style.display = 'none';
 
-        // alert(`Error: "${e}"\nPlease input a valid 5 digit US Zip Code\nEx. 90210`); --> Old 'alert' style error
+
     }
 
 }
