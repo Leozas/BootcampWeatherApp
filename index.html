@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta Infos -->
+  <title>Your Local Weather</title>
+  <meta name="description" content="Awesome Inc. Fall 2019 Weather App Javascript Project">
+  <meta name="author" content="Michael A. Loyselle">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Themestr Theme Css -->
+  <link rel="stylesheet" href="web/css/themestr.css">
+  
+  <!-- My CSS-->
+  <link rel="styleshett" href="web/css/style.css">
+
+</head>
+
+<body>
+  <h1 class="text-center my-5 text-primary">Weather App</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <!--- columns to make row into 3rds to center form input and button -->
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+      <!-- column to hold everything? -->
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="col">
+          <div class="formandbutton">
+            <!-- input form for zip code -->
+            <div class="form-group">
+              <input type="TEL" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code"
+                maxlength="5" autofocus>
+              <small id="" class="form-text text-muted">Enter a US Zip Code then click "Get Weather".</small>
+            </div>
+            <button id="weatherBtn" type="button" class="btn btn-primary">Get Weather</button>
+          </div>
+          <p id="error"></p>
+        </div>
+      </div>
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+      <!-- column to hold everything? -->
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="" id="toggletable"> <!-- d-none -->
+          <table class="table bg-primary text-white text-center border my-4">
+            <thead>
+              <tr>
+                <th class="tableheader">City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"></td>
+                <td id="city">Lex</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
+            <thead>
+              <tr>
+                <th class="tableheader">Temperature</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"></td>
+                <td id="tempK">325</td>
+                <td id="tempF">32</td>
+                <td id="tempC">0</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
+            <thead>
+              <tr>
+                <th class="tableheader">Condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"></td>
+                <td id="condition">Sunny</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
+            <thead>
+              <tr>
+                <th class="tableheader">Season</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"></td>
+                <td id="season">Spring</td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+
+
+    </div>
+  </div>
+
+
+  <!-- need:  
+    1 title: "Weather App"          
+    1 form: input Zip Codes
+    1 button: "Get Weather"
+        clicking with recognized zip code loads
+          ->city name
+          -> temperatures: K,F,C
+          ->Condition: Rainy/Cloudy/etc
+          ->Season Display: Spring/Summer/Fall/Winter
+        clicking with unrecognized zip code loads 
+          -> error message
+       -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS  -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- My JS -->
+  <script src="web/js/main.js"></script>
+
+</body>
+
+</html>
