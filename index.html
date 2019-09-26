@@ -3,8 +3,6 @@
 
 <head>
 
-  <title>Title</title>
-
   <!-- Meta Infos -->
   <title>Your Local Weather</title>
   <meta name="description" content="Awesome Inc. Fall 2019 Weather App Javascript Project">
@@ -20,11 +18,14 @@
 
   <!-- Themestr Theme Css -->
   <link rel="stylesheet" href="web/css/themestr.css">
+  
+  <!-- My CSS-->
+  <link rel="styleshett" href="web/css/style.css">
 
 </head>
 
 <body>
-  <h1 class=>Weather App</h1>
+  <h1 class="text-center my-5 text-primary">Weather App</h1>
   <div class="container-fluid">
     <div class="row">
       <!--- columns to make row into 3rds to center form input and button -->
@@ -35,15 +36,13 @@
           <div class="formandbutton">
             <!-- input form for zip code -->
             <div class="form-group">
-              <input type="" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code">
+              <input type="TEL" class="form-control" name="" id="" aria-describedby="" placeholder="US Zip Code"
+                maxlength="5" autofocus>
               <small id="" class="form-text text-muted">Enter a US Zip Code then click "Get Weather".</small>
             </div>
+            <button id="weatherBtn" type="button" class="btn btn-primary">Get Weather</button>
           </div>
-        </div>
-        <div class="col">
-          <div class="getweatherbutton">
-            <button type="button" class="btn btn-primary">Get Weather</button>
-          </div>
+          <p id="error"></p>
         </div>
       </div>
       <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
@@ -52,8 +51,8 @@
       <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
       <!-- column to hold everything? -->
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-        <div class="toggletable">
-          <table class="table table-dark">
+        <div class="" id="toggletable"> <!-- d-none -->
+          <table class="table bg-primary text-white text-center border my-4">
             <thead>
               <tr>
                 <th class="tableheader">City</th>
@@ -62,9 +61,12 @@
             <tbody>
               <tr>
                 <td scope="row"></td>
-                <td class="city">Lex</td>
+                <td id="city">Lex</td>
               </tr>
             </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
             <thead>
               <tr>
                 <th class="tableheader">Temperature</th>
@@ -78,6 +80,9 @@
                 <td id="tempC">0</td>
               </tr>
             </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
             <thead>
               <tr>
                 <th class="tableheader">Condition</th>
@@ -89,6 +94,9 @@
                 <td id="condition">Sunny</td>
               </tr>
             </tbody>
+          </table>
+          <table class="table bg-primary text-white text-center border my-4">
+
             <thead>
               <tr>
                 <th class="tableheader">Season</th>
