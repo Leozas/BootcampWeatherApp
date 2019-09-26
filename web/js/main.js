@@ -54,7 +54,7 @@ async function currentForecast() {
         condition.innerHTML = currentWeather.weather[0].description;
 
         // season 
-        season.innerHTML = `<img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
+        season.innerHTML = `<img src="https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
 
         // display table
         toggletable.style.display = 'block';
